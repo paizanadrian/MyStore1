@@ -1,0 +1,47 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python*)",
+      "Bash(.venv\\Scripts\\python*)",
+      "Bash(pip*)",
+      "Bash(git*)",
+      "Bash(dir*)",
+      "Bash(ls*)",
+      "Bash(echo*)",
+      "Bash(type*)",
+      "Bash(copy*)",
+      "Bash(move*)"
+    ],
+    "deny": [
+      "Bash(rm -rf*)",
+      "Bash(del /f /s*)",
+      "Bash(format *)",
+      "Bash(rd /s /q C*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo [PostEdit] File saved."
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo Weiboo Django project loaded. Python venv: .venv/Scripts/python"
+          }
+        ]
+      }
+    ]
+  },
+  "autoMemoryEnabled": true
+}
