@@ -45,3 +45,7 @@
 - Modele: de creat
 - API: de construit
 - Logică business: de adăugat
+
+## Git & GitHub
+- Repo: https://github.com/paizanadrian/MyStore1
+- Branch principal: main
